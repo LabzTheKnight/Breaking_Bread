@@ -11,7 +11,7 @@
     </div>
       <figure class= img>
         <%# <img src="https://avatars.githubusercontent.com/u/77808978?v=4" alt=""> %>
-        <%= cl_image_tag current_user.photos.first.key %>
+        <%= asset_image_tag_for(current_user.photos.first, fallback: image_tag('avatar_default.jpeg')) %>
       <figcaption><%= current_user.description %></figcaption>
 
       </figure>
@@ -21,7 +21,7 @@
     <% current_user.meals.reverse.each do |meal| %>
       <%= link_to meal_path(meal) do %>
         <div class="meal-card">
-          <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+          <%= asset_image_tag_for(meal.photos.first, class: 'photo', fallback: image_tag('avatar_default.jpeg', class: 'photo')) %>
           <div class="meal-card-infos">
             <div>
               <p><%= meal.name %></p>
@@ -42,7 +42,7 @@
 
         <div class="meal-card">
           <%= link_to meal_path(meal) do %>
-            <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+            <%= asset_image_tag_for(meal.photos.first, class: 'photo', fallback: image_tag('avatar_default.jpeg', class: 'photo')) %>
           <%end %>
           <div class="meal-card-infos">
             <%= link_to meal_path(meal) do %>

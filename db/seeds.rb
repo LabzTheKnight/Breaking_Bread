@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
+require 'open-uri'
 
 Meal.destroy_all
 User.destroy_all
@@ -74,7 +75,7 @@ beefshrooms = Meal.new(
   expiry: "14.09.2022",
   address: "Meister-Ekkehart-Straße 9, 50937 Cologne"
 )
-file2 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/Beef-and-Mushrooms-with-Smashed-Potatoes_EXPS_SDON17_191910_D06_30_2b-4.jpg?fit=700,1024")
+file2 = URI.open("https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800")
 beefshrooms.photos.attach(io: file2, filename: 'beefshrooms', content_type: 'image/jpg')
 beefshrooms.user = ronna
 beefshrooms.save
@@ -93,7 +94,7 @@ salchow = Meal.new(
   expiry: "15.09.2022",
   address: "Zülpicher Straße 203, 50937 Cologne"
 )
-file3 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/Northwest-Salmon-Chowder_EXPS_COTS21_9594_G05_04_1b.jpg?fit=700,1024")
+file3 = URI.open("https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=800")
 salchow.photos.attach(io: file3, filename: 'salchow', content_type: 'image/jpg')
 salchow.user = josephine
 salchow.save
@@ -111,7 +112,7 @@ creojam = Meal.new(
   expiry: "12.09.2022",
   address: "Lothringer Straße 22, 50677 Cologne"
 )
-file4 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/exps3123_SF143315D11_05_5b_WEB-2.jpg?fit=700,1024")
+file4 = URI.open("https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=800")
 creojam.photos.attach(io: file4, filename: 'creojam', content_type: 'image/jpg')
 creojam.user = ruby
 creojam.save
@@ -164,7 +165,7 @@ beefpaprikash = Meal.new(
   expiry: "12.09.2022",
   address: "Biberstraße 32, 50678 Cologne"
 )
-file7 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/exps187883_TH153343C04_14_2b-1.jpg?fit=700,1024")
+file7 = URI.open("https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800")
 beefpaprikash.photos.attach(io: file7, filename: 'beefpaprikash', content_type: 'image/jpg')
 beefpaprikash.user = jeff
 beefpaprikash.save
@@ -182,7 +183,7 @@ chickenriceskillet = Meal.new(
   expiry: "12.09.2022",
   address: "Landsbergstraße 26, 50678 Cologne"
 )
-file8 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/Chicken-Rice-Skillet_EXPS_MIOPBZ17_15416_C10_13_5b-4.jpg?fit=700,1024")
+file8 = URI.open("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800")
 chickenriceskillet.photos.attach(io: file8, filename: 'chickenriceskillet', content_type: 'image/jpg')
 chickenriceskillet.user = jeff
 chickenriceskillet.save
@@ -200,7 +201,7 @@ beanbeefchili = Meal.new(
   expiry: "14.09.2022",
   address: "Löwengasse 9, 50676 Cologne"
 )
-file9 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/exps79528_SD153319B10_07_5b-2.jpg?fit=700,1024")
+file9 = URI.open("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800")
 beanbeefchili.photos.attach(io: file9, filename: 'beanbeefchili', content_type: 'image/jpg')
 beanbeefchili.user = damon
 beanbeefchili.save
@@ -217,7 +218,7 @@ haystraw = Meal.new(
   expiry: "14.09.2022",
   address: "Krummer Büchel 2, 50676 Cologne"
 )
-file10 = URI.open("https://www.tasteofhome.com/wp-content/uploads/2018/01/exps21282_FF163882B01_13_6b.jpg?fit=700,1024")
+file10 = URI.open("https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800")
 haystraw.photos.attach(io: file10, filename: 'haystraw', content_type: 'image/jpg')
 haystraw.user = sabrina
 haystraw.save

@@ -13,7 +13,7 @@
       <% @meals.reverse.each do |meal| %>
         <%= link_to meal_path(meal) do %>
           <div class="meal-card">
-            <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+            <%= asset_image_tag_for(meal.photos.first, class: 'photo', fallback: image_tag('avatar_default.jpeg', class: 'photo')) %>
 
             <div class="meal-card-infos">
               <div>
@@ -36,7 +36,7 @@
         <% @selection.each do |meal| %>
           <%= link_to meal_path(meal) do %>
             <div class="meal-card">
-              <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+              <%= asset_image_tag_for(meal.photos.first, class: 'photo', fallback: image_tag('avatar_default.jpeg', class: 'photo')) %>
 
               <div class="meal-card-infos">
                 <div>
@@ -57,7 +57,7 @@
         <% @selection.each do |meal| %>
           <%= link_to meal_path(meal) do %>
             <div class="meal-card">
-              <%= cl_image_tag meal.photos.first.key, class:'photo'%>
+              <%= asset_image_tag_for(meal.photos.first, class: 'photo', fallback: image_tag('avatar_default.jpeg', class: 'photo')) %>
 
               <div class="meal-card-infos">
                 <div>
