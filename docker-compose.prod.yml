@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  db:
+    restart: always
+    environment:
+      POSTGRES_DB: Breaking_Bread_production
+
+  redis:
+    restart: always
+
+  web:
+    restart: always
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:migrate && bundle exec rails server -b 0.0.0.0"
+    volumes: []  # No volume mounts in production
+    environment:
+      - RAILS_ENV=production
+      - RAILS_LOG_TO_STDOUT=true
+      - RAILS_SERVE_STATIC_FILES=true
+      - DATABASE_NAME=Breaking_Bread_production
+    ports:
+      - "80:3000"  # Map port 80 to Rails port 3000

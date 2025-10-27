@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+
+# Logs
+log/*
+tmp/*
+
+# Dependencies
+node_modules/
+vendor/bundle/
+
+# Environment files
+.env*
+!.env.example
+
+# Database
+*.sqlite3
+*.sqlite3-journal
+
+# Storage
+storage/*
+tmp/storage/*
+
+# Assets
+public/assets
+app/assets/builds/*
+
+# System files
+.DS_Store
+*.swp
+*.swo
+
+# Testing
+test/
+spec/
+coverage/
+
+# Documentation
+README.md
+.github/
+
+# IDE
+.vscode/
+.idea/
