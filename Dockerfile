@@ -33,8 +33,8 @@ COPY . .
 # Precompile assets (for production) - skip if it fails
 RUN RAILS_ENV=production SECRET_KEY_BASE=dummy bundle exec rake assets:precompile 2>/dev/null || echo "Skipping asset precompilation"
 
-# Expose port 3000
-EXPOSE 3000
+# Expose port 4000
+EXPOSE 4000
 
 # Copy entrypoint script
 COPY docker-entrypoint.sh /usr/bin/

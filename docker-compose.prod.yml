@@ -11,7 +11,7 @@ services:
 
   web:
     restart: always
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:create && bundle exec rails db:migrate && bundle exec rails server -b 127.0.0.1 -p 4000"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:create && bundle exec rails db:migrate && bundle exec rails server -b 0.0.0.0 -p 4000"
     volumes: []  # No volume mounts in production
     environment:
       - RAILS_ENV=production
