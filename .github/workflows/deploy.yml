@@ -19,6 +19,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          script: | 
-              VPS_HOST=${{ secrets.SSH_HOST }} bash /srv/deploy_breakingbread.sh
+          script: |
+            cd /srv/project2/Breaking_Bread
+            bash /srv/deploy_breakingbread.sh
 
