@@ -20,6 +20,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
-            cd /srv/project2/Breaking_Bread
+
             bash /srv/deploy_breakingbread.sh
 
