@@ -235,8 +235,9 @@ beansoup = Meal.new(
   expiry: "10.09.2022",
   address: "Wöhlerstraße 35, 50823 Cologne"
 )
-file11 = URI.open("https://www.kuechengoetter.de/uploads/media/630x630/00/5760-gruener-bohneneintopf.jpg?v=1-0")
-beansoup.photos.attach(io: file11, filename: 'beansoup', content_type: 'image/jpg')
+# Use a local fallback image to avoid remote fetch failures (some hosts return 403)
+file11 = File.open(Rails.root.join('app', 'assets', 'images', 'avatar_default.jpg'))
+beansoup.photos.attach(io: file11, filename: 'beansoup.jpg', content_type: 'image/jpg')
 beansoup.user = justus
 beansoup.save
 

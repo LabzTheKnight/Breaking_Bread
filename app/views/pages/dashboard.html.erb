@@ -42,7 +42,7 @@
 
         <div class="meal-card">
           <%= link_to meal_path(meal) do %>
-            <%= asset_image_tag_for(meal.photos.first, class: 'photo', fallback: image_tag('avatar_default.jpeg', class: 'photo')) %>
+            <%= asset_image_tag_for(meal.photos.first, class: 'photo', fallback: image_tag('avatar_default.jpg', class: 'photo')) %>
           <%end %>
           <div class="meal-card-infos">
             <%= link_to meal_path(meal) do %>

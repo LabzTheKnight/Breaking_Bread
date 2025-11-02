@@ -14,7 +14,7 @@
       <div class="carousel-inner">
         <% @meal.photos.each do |photo| %>
           <div class="carousel-item active">
-          <%= asset_image_tag_for(photo, class: "photo d-block", fallback: image_tag('avatar_default.jpeg', class: 'photo d-block')) %>
+          <%= asset_image_tag_for(photo, class: "photo d-block", fallback: image_tag('avatar_default.jpg', class: 'photo d-block')) %>
           </div>
         <% end %>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
