@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy to VPS
+      - name: Deploy to VPS and run seeds
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -20,6 +20,10 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
-
+            # run deploy script on the server 
             bash /srv/deploy_breakingbread.sh
+
+            # run database seeds inside the deployed compose project
+            cd /srv/project2/Breaking_Bread || cd /srv/Breaking_Bread || true
+            docker compose -f docker-compose.prod.yml exec -T web bash -lc "RAILS_ENV=production bundle exec rails db:seed" || true
 
