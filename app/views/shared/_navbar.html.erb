@@ -32,7 +32,7 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= asset_image_tag_for(current_user.photos.first, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, fallback: image_tag('avatar_default.jpeg', class: 'avatar dropdown-toggle', id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false)) %>
+            <%= asset_image_tag_for(current_user.photos.first, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, fallback: image_tag('avatar_default.svg', class: 'avatar dropdown-toggle', id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false)) %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
               <%= link_to "All Meals", meals_path, class: "dropdown-item" %>
